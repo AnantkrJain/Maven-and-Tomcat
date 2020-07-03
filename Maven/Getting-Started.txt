@@ -1,0 +1,71 @@
+MAVEN CLI :-
+
+Maven getting started(in 5 minutes):
+http://maven.apache.org/guides/getting-started/maven-in-five-minutes.html
+
+Commands:
+
+1. mvn archetype:generate -DgroupId=com.imarticus.app -DartifactId=my-app -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+
+2. cd my-app
+
+3. tree
+
+4. pom.xml
+		To open pom.xml file
+
+5. mvn package
+		Used to build the project i.e; to create executable jar file. It creates "target" folder having jar file of project, classes, test classes, generated sources and maven status.
+		
+6. java -cp target/my-app-1.0-SNAPSHOT.jar com.imarticus.app.App
+		Run the generated executable jar file and get the output from App.java file.
+		Syntax: java -[tag to run jar file] [location of JAR file] [packageName.FileName]
+		
+
+
+---------------------------------------------------------------------------------------------------------------
+
+MAVEN ECLIPSE :-
+
+1. File -> New -> Maven Project
+
+2. Uncheck "create a simple project(skip archetype selection)"
+		->
+
+3. Catalog: All Catalogs
+   Filter: 
+		Group ID: org.apache.maven.archetypes
+		Artifact ID: maven-archetype-quickstart
+		Version: 1.4
+			->
+			
+4. New Maven Project
+		Group ID: com.imarticus.demo
+		Artifact ID: DemoApp
+			->Finish
+			
+5. To add any dependency:
+		Go to 'maven repository'.
+		URL:- mvnrepository.com
+
+6. If you don't see the jar file of dependency in 'Maven Dependencies' which you added, then 
+		Right click on [project name] -> Maven -> Update Project
+		
+7. You can also import maven project from your computer. 
+		File -> Import -> Maven -> Existing Maven project -> [Browse from the location]
+	# A project can't be imported without pom.xml file. 
+
+8. In pom.xml, there are basic GAV tags which are related to project and properties tag which deals with other things which tell maven how the particular project needs to be executed.
+
+
+
+
+
+
+
+
+
+
+
+
+
