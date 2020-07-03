@@ -1,0 +1,73 @@
+TOMCAT CLI :-
+
+1. If another process is going on in tomcat default port and you want to run tomcat there,
+		Find the process Id running on the port 8080
+			netstat -ano | findstr "PID :8080"
+		Kill the process so tomcat server can run on port 8080
+			taskkill /pid [Process Id] /f
+		#If access is denied to kill the particular process id, then run the command prompt as administrator.
+
+2. Go to the location where tomcat is extracted. In my case, it is "C:\Users\Admin\Downloads\apache-tomcat-9.0.36\bin"
+
+3. Use command "catalina.bat start". Tomcat will start running on port number 8080. Go to browser, provide URL: http://localhost:8080/.
+
+4. On providing URL, it may ask for username and password. Then provide username and password in "[tomcat directory]/conf/tomcat-users.xml" as: 
+	
+	<tomcat-users>
+		<user username="admin" password="admin" roles="manager-gui,manager-script,manager-jmx,manager-status,admin-gui,admin-script"/>
+	</tomcat-users>
+	
+-----------------------------------------------------------------------------------------------------------------
+
+TOMCAT ECLIPSE:-
+
+1. Open Java EE plateform for eclipse which is available in Eclipse Enterprise Java Developers. Then go to "Servers". 
+
+2. Click on option "No server is available.Click to add server."
+
+3. Select Apache->Tomcat->Apache Tomcat v9.0 
+	#Version should be same as downloaded tomcat server on your computer.
+
+4. Browse the location of tomcat server folder downloaded in your computer. 
+
+5. Now in "Servers" tab, you will get "Tomcat v9.0 Server at localhost [Stopped,Synchronized]"
+
+6. Start the server now. If it shows that port is busy, then kill the process id running on the port in command line(as instructerd in TOMCAT CLI).
+
+7. Now in "Servers" tab, you will get "Tomcat v9.0 Server at localhost [Started,Synchronized]". Also go to the browser and provide the URL: http://localhost/8080/.
+#If server is not started, then you will get the output as "This site can't be reached" otherwise you will get "HTTP Status 404 - Not Found".
+
+--------------------------------------------------------------------------------------------------------------
+
+Running two servers:-
+
+Single instance of tomcat can have multiple number of ports but still you want to run two tomcat servers, then
+copy the tomcat directory into another location. Now you have two locations for tomcat server.
+
+Go to one of the locations: [Tomcat directory]->conf->server.xml. Change the port number 8080 to something else. Now, default port number is changed for one of the tomcat servers. 
+
+	To change the port number of tomcat server in command line, use "catalina.bat start -port.number=[Port Number]" command.
+	
+---------------------------------------------------------------------------------------------------------------
+
+Documentation:-
+
+To create documentation for your program:
+	javadoc [FileName].java
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
