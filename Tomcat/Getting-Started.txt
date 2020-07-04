@@ -21,21 +21,39 @@ TOMCAT CLI :-
 
 TOMCAT ECLIPSE:-
 
-1. Open Java EE plateform for eclipse which is available in Eclipse Enterprise Java Developers. Then go to "Servers". 
+How to Add the server - 
 
-2. Click on option "No server is available.Click to add server."
+	1. Open Java EE plateform for eclipse which is available in Eclipse Enterprise Java Developers. Then go to "Servers". 
 
-3. Select Apache->Tomcat->Apache Tomcat v9.0 
-	#Version should be same as downloaded tomcat server on your computer.
+	2. Click on option "No server is available.Click to add server."
 
-4. Browse the location of tomcat server folder downloaded in your computer. 
+	3. Select Apache->Tomcat->Apache Tomcat v9.0 
+		#Version should be same as downloaded tomcat server on your computer.
 
-5. Now in "Servers" tab, you will get "Tomcat v9.0 Server at localhost [Stopped,Synchronized]"
+	4. Browse the location of tomcat server folder downloaded in your computer. 
 
-6. Start the server now. If it shows that port is busy, then kill the process id running on the port in command line(as instructerd in TOMCAT CLI).
+	5. Now in "Servers" tab, you will get "Tomcat v9.0 Server at localhost [Stopped,Synchronized]"
 
-7. Now in "Servers" tab, you will get "Tomcat v9.0 Server at localhost [Started,Synchronized]". Also go to the browser and provide the URL: http://localhost/8080/.
-#If server is not started, then you will get the output as "This site can't be reached" otherwise you will get "HTTP Status 404 - Not Found".
+	6. Start the server now. If it shows that port is busy, then kill the process id running on the port in command line(as instructerd in TOMCAT CLI).
+
+	7. Now in "Servers" tab, you will get "Tomcat v9.0 Server at localhost [Started,Synchronized]". Also go to the browser and provide the URL: http://localhost/8080/.
+	#If server is not started, then you will get the output as "This site can't be reached" otherwise you will get "HTTP Status 404 - Not Found".
+
+
+Dynamic Web Project-
+
+	1. File->New->Other->Search "Dynamic Web project"
+	
+	2. After creation of project, go to Java Resources->Right click on 'src'->New->Servlet ->Create Servlet
+													Java Package: com.imarticus.demo
+													Class Name: FirstServlet
+														->
+																									
+	3. Since there is no jar available for servlet, Right click on [Project Name]->Build Path->Configure Build Path-> Libraries->Add External JARs->Browse "servlet-api.jar".
+	
+	4. Use PrintWriter class and getWriter Method of it to print the output on console.
+	
+	5. Add the server, start the sever and select "run on server".
 
 --------------------------------------------------------------------------------------------------------------
 
